@@ -2,7 +2,7 @@
   "name": "Argus 3D Graph",
   "description": "Visualisation tool for Data Set Specifications and Distributions.",
   "manifest_version": "v1.0",
-  "image": "",
+  "image": "https://aristotle-metadata-enterprises.github.io/argus-3d-graph/image.png",
   "publisher": "Aristotle Metadata",
   "publisher_email": "contact@aristotlemetadata.com",
   "contributor": "some devs from Aristotle",

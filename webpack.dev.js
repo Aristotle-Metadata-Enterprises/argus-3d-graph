@@ -16,7 +16,7 @@ module.exports = merge(common, {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
+    contentBase: './docs',
     port: 9001,
     headers: {
         "Access-Control-Allow-Origin": "*",

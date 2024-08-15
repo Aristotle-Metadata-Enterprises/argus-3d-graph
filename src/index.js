@@ -31,6 +31,7 @@ new Vue({
             property: '#fb9a99',
         },
         argusJS: null,
+        baseurl: '',
     },
     computed: {
         prettyMap: function() {
@@ -45,6 +46,7 @@ new Vue({
     mounted: async function() {
         this.initGraph()
         this.argusJS = await initArgusJS()
+        this.baseurl = this.argusJS.mdrUrl()
     },
     methods: {
         requestUuid: function(node) {
@@ -213,6 +215,8 @@ new Vue({
             const containerPaddingRight = parseInt(getComputedStyle(container).getPropertyValue('padding-right'))
             const graphWidth = containerWidth - containerPaddingLeft - containerPaddingRight
             graphElem.style.width = `${graphWidth}px`
+            // this console.log should be kept
+            console.log("graphElem.style.width: ", graphElem.style.width)
 
             import(/* webpackChunkName: "3d-force-graph" */ '3d-force-graph').then(tdfg => {
 
@@ -231,8 +235,7 @@ new Vue({
             this.displayInfo = {
                 Name: node.name,
                 Type: this.unCamel(node.type),
-                // currently this link needs the baseurl, which cannot retrive from the argusJS
-                // Link: `${this.baseurl}/item/${node.id}`,  // Set the display info (runs on node click).
+                Link: `${this.baseurl}/item/${node.id}`,  // Set the display info (runs on node click).
             }
         },
         unCamel: function(text) {

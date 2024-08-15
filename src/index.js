@@ -213,7 +213,9 @@ new Vue({
             const containerWidth = container.clientWidth
             const containerPaddingLeft = parseInt(getComputedStyle(container).getPropertyValue('padding-left'))
             const containerPaddingRight = parseInt(getComputedStyle(container).getPropertyValue('padding-right'))
-            const graphWidth = containerWidth - containerPaddingLeft - containerPaddingRight
+            // TODO
+            // const graphWidth = containerWidth - containerPaddingLeft - containerPaddingRight
+            const graphWidth = 1110
             graphElem.style.width = `${graphWidth}px`
             // this console.log should be kept
             console.log("graphElem.style.width: ", graphElem.style.width)
